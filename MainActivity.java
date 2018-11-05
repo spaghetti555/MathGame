@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             int gameScore = getIntent().getExtras().getInt("Score");
             score.setText("Score: "+ gameScore);
             txt1.setText(txt);
-//aaaaaaagagagaCHANGERIGHTNOW
+
         }
         if (getIntent().hasExtra("newGame"))
         {

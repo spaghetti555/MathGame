@@ -59,8 +59,9 @@ public class GameActivity extends AppCompatActivity {
                     backIntent.putExtra("newGame","New Question");
                     backIntent.putExtra("Score", 0);
 
-                    startActivity(backIntent);
-                    finish();//????????? <Aciivity android:noHistory=true"
+                        setResult(RESULT_OK,backIntent);
+                        finish();
+
                 }
                 handler.postDelayed(this,200);
             }
@@ -116,71 +117,17 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
                     String winState="";
                     int WinLose = rand.nextInt(5);
+                    boolean flag;
                 if (Integer.parseInt(B1.getText().toString())==answer)
                 {
-                    switch (WinLose)
-                    {
-                        case 0:
-                        {
-                            winState="Congrats, win";
-                            break;//aaaa
-                        }
-                        case 1:
-                        {
-                            winState="You won!";
-                            break;
-                        }
-                        case 2:
-                        {
-                            winState="Easy!";
-                            break;
-                        }
-                        case 3:
-                        {
-                            winState="Wow, nice!";
-                            break;
-                        }
-                        default:
-                        {
-                            winState="Good Job!";
-                            break;
-                        }
-
-                    }
-
+                    flag=true;
                 }
                 else
-                    {
-                        switch (WinLose)
-                        {
-                            case 0:
-                            {
-                                winState="You lost :(";
-                                break;
-                            }
-                            case 1:
-                            {
-                                winState=":(";
-                                break;
-                            }
-                            case 2:
-                            {
-                                winState="Too bad";
-                                break;
-                            }
-                            case 3:
-                            {
-                                winState="Very sad";
-                                break;
-                            }
-                            default:
-                            {
-                                winState="Spaghetti?";
-                                break;
-                            }
+                {
+                    flag=false;
 
-                        }
-                    }
+                }
+                winState = returnStr(flag,WinLose);
                 Intent backIntent = new Intent(getApplicationContext(), MainActivity.class);
                 backIntent.putExtra("winState", winState);
                 backIntent.putExtra("newGame","Next Question");
@@ -201,71 +148,17 @@ public class GameActivity extends AppCompatActivity {
                                   public void onClick(View v) {
                                       String winState="";
                                       int WinLose = rand.nextInt(5);
+                                      boolean flag;
                                       if (Integer.parseInt(B2.getText().toString())==answer)
                                       {
-                                          switch (WinLose)
-                                          {
-                                              case 0:
-                                              {
-                                                  winState="Congrats, win";
-                                                  break;
-                                              }
-                                              case 1:
-                                              {
-                                                  winState="You won!";
-                                                  break;
-                                              }
-                                              case 2:
-                                              {
-                                                  winState="Easy!";
-                                                  break;
-                                              }
-                                              case 3:
-                                              {
-                                                  winState="Wow, nice!";
-                                                  break;
-                                              }
-                                              default:
-                                              {
-                                                  winState="Good Job!";
-                                                  break;
-                                              }
-
-                                          }
-
+                                          flag=true;
                                       }
                                       else
                                       {
-                                          switch (WinLose)
-                                          {
-                                              case 0:
-                                              {
-                                                  winState="You lost :(";
-                                                  break;
-                                              }
-                                              case 1:
-                                              {
-                                                  winState=":(";
-                                                  break;
-                                              }
-                                              case 2:
-                                              {
-                                                  winState="Too bad";
-                                                  break;
-                                              }
-                                              case 3:
-                                              {
-                                                  winState="Very sad";
-                                                  break;
-                                              }
-                                              default:
-                                              {
-                                                  winState="Spaghetti?";
-                                                  break;
-                                              }
+                                          flag=false;
 
-                                          }
                                       }
+                                      winState = returnStr(flag,WinLose);
                                       Intent backIntent = new Intent(getApplicationContext(), MainActivity.class);
                                       backIntent.putExtra("winState", winState);
                                       backIntent.putExtra("newGame","Next Question");
@@ -284,71 +177,17 @@ public class GameActivity extends AppCompatActivity {
                                   public void onClick(View v) {
                                       String winState="";
                                       int WinLose = rand.nextInt(5);
+                                      boolean flag;
                                       if (Integer.parseInt(B3.getText().toString())==answer)
                                       {
-                                          switch (WinLose)
-                                          {
-                                              case 0:
-                                              {
-                                                  winState="Congrats, win";
-                                                  break;
-                                              }
-                                              case 1:
-                                              {
-                                                  winState="You won!";
-                                                  break;
-                                              }
-                                              case 2:
-                                              {
-                                                  winState="Easy!";
-                                                  break;
-                                              }
-                                              case 3:
-                                              {
-                                                  winState="Wow, nice!";
-                                                  break;
-                                              }
-                                              default:
-                                              {
-                                                  winState="Good Job!";
-                                                  break;
-                                              }
-
-                                          }
-
+                                          flag=true;
                                       }
                                       else
                                       {
-                                          switch (WinLose)
-                                          {
-                                              case 0:
-                                              {
-                                                  winState="You lost :(";
-                                                  break;
-                                              }
-                                              case 1:
-                                              {
-                                                  winState=":(";
-                                                  break;
-                                              }
-                                              case 2:
-                                              {
-                                                  winState="Too bad";
-                                                  break;
-                                              }
-                                              case 3:
-                                              {
-                                                  winState="Very sad";
-                                                  break;
-                                              }
-                                              default:
-                                              {
-                                                  winState="Spaghetti?";
-                                                  break;
-                                              }
+                                          flag=false;
 
-                                          }
                                       }
+                                      winState = returnStr(flag,WinLose);
                                       Intent backIntent = new Intent(getApplicationContext(), MainActivity.class);
                                       backIntent.putExtra("winState", winState);
                                       backIntent.putExtra("newGame","Next Question");
@@ -367,72 +206,18 @@ public class GameActivity extends AppCompatActivity {
                                   @Override
                                   public void onClick(View v) {
                                       String winState="";
+                                      boolean flag;
                                       int WinLose = rand.nextInt(5);
                                       if (Integer.parseInt(B4.getText().toString())==answer)
                                       {
-                                          switch (WinLose)
-                                          {
-                                              case 0:
-                                              {
-                                                  winState="Congrats, win";
-                                                  break;
-                                              }
-                                              case 1:
-                                              {
-                                                  winState="You won!";
-                                                  break;
-                                              }
-                                              case 2:
-                                              {
-                                                  winState="Easy!";
-                                                  break;
-                                              }
-                                              case 3:
-                                              {
-                                                  winState="Wow, nice!";
-                                                  break;
-                                              }
-                                              default:
-                                              {
-                                                  winState="Good Job!";
-                                                  break;
-                                              }
-
-                                          }
-
+                                          flag=true;
                                       }
                                       else
-                                      {
-                                          switch (WinLose)
                                           {
-                                              case 0:
-                                              {
-                                                  winState="You lost :(";
-                                                  break;
-                                              }
-                                              case 1:
-                                              {
-                                                  winState=":(";
-                                                  break;
-                                              }
-                                              case 2:
-                                              {
-                                                  winState="Too bad";
-                                                  break;
-                                              }
-                                              case 3:
-                                              {
-                                                  winState="Very sad";
-                                                  break;
-                                              }
-                                              default:
-                                              {
-                                                  winState="Spaghetti?";
-                                                  break;
-                                              }
+                                              flag=false;
 
                                           }
-                                      }
+                                          winState = returnStr(flag,WinLose);
                                       Intent backIntent = new Intent(getApplicationContext(), MainActivity.class);
                                       backIntent.putExtra("winState", winState);
                                       backIntent.putExtra("newGame","Next Question");
@@ -451,6 +236,62 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-
     }
+
+
+    private String returnStr(boolean flag, int WinLose) {
+        String winState = "";
+        if (flag)
+            switch (WinLose) {
+                case 0: {
+                    winState = "Congrats, win";
+                    break;
+                }
+                case 1: {
+                    winState = "You won!";
+                    break;
+                }
+                case 2: {
+                    winState = "Easy!";
+                    break;
+                }
+                case 3: {
+                    winState = "Wow, nice!";
+                    break;
+                }
+                default: {
+                    winState = "Good Job!";
+                    break;
+                }
+
+            }
+        else {
+            switch (WinLose) {
+                case 0: {
+                    winState = "You lost :(";
+                    break;
+                }
+                case 1: {
+                    winState = ":(";
+                    break;
+                }
+                case 2: {
+                    winState = "Too bad";
+                    break;
+                }
+                case 3: {
+                    winState = "Very sad";
+                    break;
+                }
+                default: {
+                    winState = "Spaghetti?";
+                    break;
+                }
+
+            }
+
+        }
+            return winState;
+    }
+
 }
